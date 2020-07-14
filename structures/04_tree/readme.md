@@ -42,9 +42,15 @@
 
 其实我们这里和层次遍历相同 , 这也称为BFS
 
-## 104. Maximum Depth of Binary Tree 03 DFS
+## 104. Maximum Depth of Binary Tree 03 DFS 递归
 
 这其实就是刚才讲的自顶向下的方法。
+
+## 104. Maximum Depth of Binary Tree 04 DFS 迭代
+
+想法是使用 DFS 策略访问每个结点，同时在每次访问时更新最大深度。
+
+所以我们从包含根结点且相应深度为 1 的栈开始。然后我们继续迭代：将当前结点弹出栈并推入子结点。每一步都会更新深度。
 
 ## 101. Symmetric Tree 01 双端队列
 
