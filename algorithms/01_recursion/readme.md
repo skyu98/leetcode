@@ -90,3 +90,16 @@ F(N) = F(N - 1) + F(N - 2), for N > 2.
 ## 50_Pow(x,n)_02 递归快速幂
 当有了```half = pow(x, n/2)```, ```pow(x, n) = (n%2) == 0 ? half * half : half * half * x;``` 
 
+## 779_K-th_Symbol_in_Grammar
+明显结构是：前半部分与上一行相同，后一部分是上一行反转；
+所以，假设已经知道第N-1行，那么：
+```cpp
+// 前半部分
+if(K <= mid): kthGrammar(N, K) = kthGrammar(N-1, K);
+// 后半部分
+else:         kthGrammar(N, K) =  1-kthGrammar(N-1, K-mid);
+```
+
+## 95_Unique_Binary_Search_Trees_II
+我们知道```generate(int start，int end)```是用于生成$[start, end]$区间所有的二叉搜索树，那么对于其中的某个位置产生的根节点i，```left = generate(start，i-1)```即是它所有可能的左子树；同理，```right = generate(i+1, end)```即是它所有可能的右子树。
+因此，我们只需要遍历left和right中的子树，生成所有可能的组合并储存，再处理下一个根节点(i+1)即可。
