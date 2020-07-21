@@ -1,4 +1,4 @@
-// up to down
+// down to up
 class Solution {
 private: 
     int res = 0;
